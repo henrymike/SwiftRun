@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Runs-->
@@ -62,11 +63,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Runs" id="Jdd-i2-dMO">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="XHX-w4-2pt">
-                            <connections>
-                                <segue destination="WUv-C4-Yax" kind="show" identifier="segueNew" id="pBJ-8H-NVR"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="XHX-w4-2pt">
+                                <connections>
+                                    <segue destination="WUv-C4-Yax" kind="show" identifier="segueNew" id="pBJ-8H-NVR"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Fastest" id="ra1-mV-0pZ">
+                                <connections>
+                                    <action selector="fastestRuns:" destination="BYZ-38-t0r" id="0wa-Kv-tTj"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="runsTableView" destination="NCR-gv-NxV" id="bXD-og-QlA"/>
