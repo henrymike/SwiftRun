@@ -1,0 +1,6 @@
+framework module Pods_SwiftRun {
+  umbrella header "Pods-SwiftRun-umbrella.h"
+
+  export *
+  module * { export * }
+}
