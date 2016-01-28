@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		555BCFC01C5A77FA00AE826C /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555BCFBF1C5A77FA00AE826C /* DataManager.swift */; };
+		555BCFC31C5A829400AE826C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555BCFC21C5A829400AE826C /* DetailViewController.swift */; };
 		55F8BADD1C5A71E200702B6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F8BADC1C5A71E200702B6F /* AppDelegate.swift */; };
 		55F8BADF1C5A71E200702B6F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F8BADE1C5A71E200702B6F /* ViewController.swift */; };
 		55F8BAE21C5A71E200702B6F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55F8BAE01C5A71E200702B6F /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		555BCFBF1C5A77FA00AE826C /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		555BCFC21C5A829400AE826C /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		55F8BAD91C5A71E100702B6F /* SwiftRun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftRun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55F8BADC1C5A71E200702B6F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55F8BADE1C5A71E200702B6F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 			children = (
 				55F8BADC1C5A71E200702B6F /* AppDelegate.swift */,
 				55F8BADE1C5A71E200702B6F /* ViewController.swift */,
+				555BCFC21C5A829400AE826C /* DetailViewController.swift */,
 				555BCFC11C5A781000AE826C /* Managers */,
 				55F8BAE01C5A71E200702B6F /* Main.storyboard */,
 				55F8BAE31C5A71E200702B6F /* Assets.xcassets */,
@@ -224,6 +227,7 @@
 				55F8BADF1C5A71E200702B6F /* ViewController.swift in Sources */,
 				555BCFC01C5A77FA00AE826C /* DataManager.swift in Sources */,
 				55F8BADD1C5A71E200702B6F /* AppDelegate.swift in Sources */,
+				555BCFC31C5A829400AE826C /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

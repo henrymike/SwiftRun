@@ -34,6 +34,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return runCell
     }
     
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            let runToDelete = dataManager.runsDataArray[indexPath.row]
+            runToDelete.deleteInBackground()
+            dataManager.fetchDataFromParse()
+        }
+    }
+    
     func newRunsDataReceived() {
         runsTableView.reloadData()
     }
@@ -46,6 +54,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         dataManager.fetchDataFromParse()
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "newRunsDataReceived", name: "receivedRunsDataFromServer", object: nil)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        dataManager.fetchDataFromParse()
     }
 
     override func didReceiveMemoryWarning() {

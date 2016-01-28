@@ -61,7 +61,13 @@
                             <constraint firstItem="NCR-gv-NxV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="jb2-kM-bhh"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Runs" id="Jdd-i2-dMO"/>
+                    <navigationItem key="navigationItem" title="Runs" id="Jdd-i2-dMO">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="XHX-w4-2pt">
+                            <connections>
+                                <segue destination="WUv-C4-Yax" kind="show" identifier="segueNew" id="pBJ-8H-NVR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="runsTableView" destination="NCR-gv-NxV" id="bXD-og-QlA"/>
                     </connections>
@@ -69,6 +75,78 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1057" y="237"/>
+        </scene>
+        <!--Run Detail-->
+        <scene sceneID="qN6-Bk-Ggd">
+            <objects>
+                <viewController id="WUv-C4-Yax" customClass="DetailViewController" customModule="SwiftRun" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ERg-UJ-fPM"/>
+                        <viewControllerLayoutGuide type="bottom" id="xhv-VV-Cp8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iQ6-YC-6MI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="oNl-wX-cYL">
+                                <rect key="frame" x="0.0" y="112" width="600" height="125"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="125" id="H6N-Iq-JCU"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="475693594.50311702">
+                                    <!--2016-01-28 17:06:34 +0000-->
+                                </date>
+                            </datePicker>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Distance" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G2x-tB-T3v">
+                                <rect key="frame" x="35" y="245" width="250" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="0LC-HD-gUv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PbI-2d-neB">
+                                <rect key="frame" x="318" y="245" width="251" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="kOd-Ni-cZi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="PbI-2d-neB" secondAttribute="trailing" constant="11" id="Cqt-Pv-PVx"/>
+                            <constraint firstItem="PbI-2d-neB" firstAttribute="width" secondItem="G2x-tB-T3v" secondAttribute="width" constant="1" id="E6y-0p-Bzz"/>
+                            <constraint firstItem="PbI-2d-neB" firstAttribute="leading" secondItem="G2x-tB-T3v" secondAttribute="trailing" constant="33" id="IJw-gW-fzq"/>
+                            <constraint firstItem="oNl-wX-cYL" firstAttribute="leading" secondItem="iQ6-YC-6MI" secondAttribute="leadingMargin" constant="-20" id="MNp-Ez-Gtm"/>
+                            <constraint firstItem="G2x-tB-T3v" firstAttribute="leading" secondItem="iQ6-YC-6MI" secondAttribute="leadingMargin" constant="15" id="isD-Wi-fXx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oNl-wX-cYL" secondAttribute="trailing" constant="-20" id="mQ5-Ih-hoU"/>
+                            <constraint firstItem="oNl-wX-cYL" firstAttribute="top" secondItem="ERg-UJ-fPM" secondAttribute="bottom" constant="48" id="n5x-Yq-qQr"/>
+                            <constraint firstItem="G2x-tB-T3v" firstAttribute="top" secondItem="oNl-wX-cYL" secondAttribute="bottom" constant="8" id="qj8-yU-Khb"/>
+                            <constraint firstItem="PbI-2d-neB" firstAttribute="top" secondItem="oNl-wX-cYL" secondAttribute="bottom" constant="8" id="zO7-QR-fgz"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="HcR-xT-e5v"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Run Detail" id="buL-eA-bmo">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="U0n-ag-6ZT">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="WUv-C4-Yax" id="785-cN-Cgy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="runDatePicker" destination="oNl-wX-cYL" id="8tB-4F-JgR"/>
+                        <outlet property="runDistanceTextField" destination="G2x-tB-T3v" id="3vF-m0-aOX"/>
+                        <outlet property="runTimeTextField" destination="PbI-2d-neB" id="GLx-gj-iCx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0qG-OW-02s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1741" y="237"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KIk-2f-nOy">
