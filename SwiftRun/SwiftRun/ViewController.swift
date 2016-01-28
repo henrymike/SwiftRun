@@ -31,6 +31,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         dateFormatter.dateFormat = "yyyy-MM-dd' 'HH:mm a"
         runCell.textLabel!.text = String(dateFormatter.stringFromDate(currentRun["dateRan"] as! NSDate))
         
+        let runPace = ((currentRun["time"] as! Double) / 60) / (currentRun["distance"] as! Double)
+        print(runPace)
+        let runDistance = currentRun["distance"]
+        let runTime = (currentRun["time"] as! Double) / 60
+        runCell.detailTextLabel!.text = String(format: "Time: %.2f", runTime) + " • " + String(format: "Pace: %.2f", runPace) + " • " + "Distance: \(runDistance) miles"
+        
+        
         return runCell
     }
     
